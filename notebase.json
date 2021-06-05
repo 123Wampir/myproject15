@@ -1,0 +1,30 @@
+{
+  "notes": [
+    {
+      "noteTitle": "dsds",
+      "noteText": "dsdsds",
+      "noteType": "1",
+      "noteCreateDate": "05.06.2021",
+      "noteCreateTime": "20:00:34",
+      "id": 1
+    },
+    {
+      "noteTitle": "dddddddddd",
+      "noteText": "dda",
+      "noteType": "2",
+      "noteCreateDate": "05.06.2021",
+      "noteCreateTime": "20:22:51",
+      "id": 2
+    }
+  ],
+  "types": [
+    {
+      "id": 1,
+      "type": "default"
+    },
+    {
+      "id": 2,
+      "type": "purchases"
+    }
+  ]
+}

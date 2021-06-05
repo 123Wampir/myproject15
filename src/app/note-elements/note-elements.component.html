@@ -1,0 +1,28 @@
+<ng-container *ngIf="!onEdit;else elseTemplate">
+  <div class="note-block">
+    <div class="note-title">{{note.noteTitle}}</div>
+    <div class="note-type">{{MyNotesService.noteType[note.noteType-1].type}}</div>
+    <div class="note-text">{{note.noteText}}</div>
+    <div class="note-date">{{note.noteCreateTime + " " + note.noteCreateDate}}</div>
+    <button class="note-delete" (click)="onDeleteNote()">Delete Note</button>
+    <button class="note-change" (click)="onEdit=true">Change Note</button>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <form [formGroup]="noteForm" class="note-form">
+    <div class="note-form-title">
+      <div class="note-title-label">Note title</div>
+      <input type="text" class="title" formControlName="noteTitle">
+    </div>
+    <div class="note-form-text">
+      <div class="note-text-label">Your note</div>
+      <textarea name="note" id="note" class="note" cols="30" rows="10" formControlName="noteText"></textarea>
+    </div>
+    <div class="note-form-type">
+      <select name="note-type" formControlName="noteType">
+        <option value="{{item.id}}" *ngFor="let item of MyNotesService.noteType">{{item.type}}</option>
+      </select>
+    </div>
+    <button class="note-change" (click)="onChangeNote()">Change Note</button>
+  </form>
+</ng-template>
